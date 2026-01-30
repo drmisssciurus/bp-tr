@@ -1,0 +1,1 @@
+print('my name is', input('what is your name?>>>>'))

@@ -34,11 +34,11 @@ def even_or_odd(number):
 	if not (type(number) is int):
 		print("Error: Invalid mode. Please enter 0, 1, 2, or 3.")
 		return
-	if number % 2 == 0:
-		print("The number is even.")
+	if number % 2:
+		print("The number is odd.")
 		return
-	print("The number is odd.")
-	return
+	print("The number is even.")
+
 
 print('1')
 even_or_odd(1)
@@ -66,13 +66,13 @@ def my_age(age):
 	if age < 0:
 		print("Error: Age cannot be negative.")
 		return
-	if 0 <= age <= 18:
+	if age <= 18:
 		print("Child.")
 		return
-	if 19 <= age <= 67:
+	if age <= 67:
 		print("Adult.")
 		return
-	if 68 <= age <= 120:
+	if age <= 120:
 		print("Retired.")
 		return
 	print("Ancient.")
@@ -94,4 +94,3 @@ print('7')
 my_age(99)
 print('8')
 my_age(140)
-

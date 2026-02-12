@@ -3,7 +3,7 @@ def greeting():
 
 # result = greeting()
 
-print(result) #ничего не возращает
+# print(result) #ничего не возращает
 
 def greeting():
 	return "Hello"

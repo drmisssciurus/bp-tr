@@ -1,4 +1,4 @@
-
+# тут ошибка если придет не верный город я верну 0, а надо -1
 def delay_time(hour: int)->int or str:
 	if type(hour) != int:
 		return -1

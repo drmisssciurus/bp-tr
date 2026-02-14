@@ -7,3 +7,5 @@ print(text5.replace(',', ' '))
 print(text5.replace('We', 'I'))
 print(text5.find('combine'))
 print(text5.lower().find('practical'.lower()))
+
+

@@ -59,3 +59,18 @@ def reverse_number_another(number):
 
 
 print('Ex3: ',reverse_number_another(1230))
+
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+
+# Task 1
+
+def print_digits(number:int)->None:
+	if number < 0:
+		print("Error: Please enter a positive number.")
+	while number > 0:
+		print(number%10)
+		number//=10
+
+print_digits(1230)
+print_digits(-1230)
+

@@ -10,18 +10,25 @@
 # Output: False (8 is divisible by 2 and 4)
 # Input: 1
 # Output: False (1 is not prime)
-from itertools import count
 
 
 def is_prime_number(number:int):
-	if number <= 0:
-		return False
-	count = 1
-	while count * count < number:
+	if number > 1:
+		count = 2
+		sqrt = number ** 0.5
+		print(sqrt)
+		while count <= sqrt:
+			print(count)
+			print(number / count)
+			if not number % count:
+				return False
+			count += 1
+		return True
+	return False
 
-	return True
-print(2%2)
-print(is_prime_number(1))
-print(is_prime_number(2))
-print(is_prime_number(4))
-print(is_prime_number(13))
+
+print(is_prime_number(1234567890987654567656732463728374328473))
+# print(is_prime_number(2))
+# print(is_prime_number(3))
+# print(is_prime_number(13))
+# print(is_prime_number(125))

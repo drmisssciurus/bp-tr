@@ -29,7 +29,7 @@ def print_str_with_space(str:str)->str:
 	while count <= str_len:
 		result += str[count] + " "
 		count += 1
-	return result
+	return result.strip()
 
 print('Ex2: ', print_str_with_space("hello"))
 

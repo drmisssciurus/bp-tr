@@ -28,25 +28,7 @@ def is_lucky_number_sides(number:int)->str:
 		return 'luck'
 	return 'not luck'
 
-print(11111%10)
-print(1111//10)
 
 print(is_lucky_number_sides(12344321))
 print(is_lucky_number_sides(123442321))
 print(is_lucky_number_sides(122334423521))
-
-	# calc = 0
-	# temp_len = count_for_length
-	# result1 = 0
-	# result2 = 0
-	# while calc != count_for_length:
-	# 	if temp_len % 2 == 0:
-	# 		result1 = number%10 + result1
-	# 	else:
-	# 		result2 = number%10 + result2
-	# 	calc += 1
-	# 	temp_len -= 1
-	# 	number //= 10
-	# if result2 == result1:
-	# 	return 'luck'
-	# return 'not luck'

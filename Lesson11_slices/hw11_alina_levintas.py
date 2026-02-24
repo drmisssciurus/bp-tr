@@ -9,9 +9,7 @@ def if_palindrome(text:str)->bool:
 	if type(text) != str:
 		print('Error: type not str')
 		return False
-	if text.lower() == text[::-1].lower():
-		return True
-	return False
+	return text.lower() == text[::-1].lower()
 
 print(if_palindrome('Alina'))
 print(if_palindrome('Stats'))
@@ -27,10 +25,10 @@ def del_first_last(text:str)->str:
 	if len(text) < 2:
 		return ''
 	new_text = text.strip()
-	return new_text[1:len(new_text)-1]
+	return new_text[1:-1]
 
 print(del_first_last(' e4 '))
-print(del_first_last('stanislav'))
+print(del_first_last(' stanislav '))
 
 # Задача 3 Поменять местами половины строки
 # Условие

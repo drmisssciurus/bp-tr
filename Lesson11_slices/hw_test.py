@@ -1,17 +1,59 @@
-# Задача 3 Поменять местами половины строки
-# Условие
-# Напишите функцию, которая получает строку чётной длины и меняет её половины
-# местами.
-# Если длина нечётная вернуть строку без изменений.
+# Task 3: Lucky Number
+def count(number):
+	count=0
+	while number != 0:
+		count += 1
+		number = number// 10
+	return count
 
-def switch_text(text:str)->str:
-	if len(text) % 2 != 0:
-		return text
-	text_len = len(text)
-	i = int(text_len / 2)
-	return  text[i:] + text[:i]
+def is_lucky_number_sides(number:int)->str:
+	i = count(number)
+	if i % 2 != 0:
+		error = 'error: number should have equal number of numbers for both sides'
+		return error
+	sum_ = 0
+	while i > 0:
+		sum_ += (number//10**(i-1)) - number%10
+		number -= (number//10**(i-1))*10**(i-1)
+		number //= 10
+		i-=2
+	return 'luck' if sum_ == 0 else 'not luck'
+
+#
+# print(123%10)
+# print(123//100)
+
+print(is_lucky_number_sides(12300321))
+print(is_lucky_number_sides(123442321))
+print(is_lucky_number_sides(122334423521))
 
 
-print(switch_text('AlinaStats'))
-print(switch_text('StatsAlina'))
-print(switch_text('palindromeq'))
+# Task 3: Lucky Number
+def count(number):
+	count=0
+	while number != 0:
+		count += 1
+		number = number// 10
+	return count
+
+def is_lucky_number_sides(number:int)->str:
+	i = count(number)
+	if i % 2 != 0:
+		error = 'error: number should have equal number of numbers for both sides'
+		return error
+	sum_ = 0
+	while i > 0:
+		sum_ += number%10
+		number //= 10
+		sum_ -= number%10
+		number//=10
+		i-=2
+	return 'luck' if sum_ == 0 else 'not luck'
+
+#
+# print(123%10)
+# print(123//100)
+
+print(is_lucky_number_sides(12300321))
+print(is_lucky_number_sides(123442321))
+print(is_lucky_number_sides(122334423521))

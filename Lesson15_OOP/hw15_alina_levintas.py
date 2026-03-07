@@ -8,6 +8,9 @@ class Car:
         to_print = f"Car: {self.model}, year: {self.year}, color: {self.color}"
         return to_print
 
+    def __repr__(self):
+        return f"Car(model='{self.model}', year={self.year}, color='{self.color}')"
+
     def turn_right(self):
         print(f"{self.model} turned right")
 
@@ -44,9 +47,28 @@ class Book:
 book1 = Book("The Hobbit", "J.R.R. Tolkien", 310)
 book2 = Book("Grokking Algorithms, 2nd Edition", "Aditya Bhargava", 336)
 book3 = Book("Harry Potter and the Prisoner of Azkaban", "J.K. Rowling", 435)
+book4 = Book("Harry Potter and the Half-Blood prince", "J.K. Rowling", 435)
 
-books_list = [book1, book2, book3]
+books_list = [book1, book2, book3,book4]
+#
+# for book in books_list:
+#     print(book)
+for b in books_list:
+    print(b)
 
-for book in books_list:
-    print(book)
+
+def search_for_author(books:list, au:str)->list:
+    res =[]
+    if not isinstance(books,list) or not isinstance(au, str):
+        return res
+    for bo in books:
+        if isinstance(bo, Book) and bo.author==au:
+            res.append(bo)
+    return res
+
+
+print("============================")
+au_list = search_for_author(books_list,"J.K. Rowling")
+for b in au_list:
+    print(b)
 

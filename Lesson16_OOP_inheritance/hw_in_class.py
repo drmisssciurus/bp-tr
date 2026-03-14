@@ -36,7 +36,7 @@ class Product:
 			print("Invalid unit")
 
 	def set_code(self, code):
-		if isinstance(code, int) and code < 0:
+		if isinstance(code, int) and code > 0:
 			self._code = code
 		else:
 			print("Invalid code")
@@ -48,7 +48,7 @@ class Product:
 			print("Invalid kosher")
 
 	def set_price(self, price):
-		if isinstance(price, float) and price < 0:
+		if isinstance(price, float) and price > 0:
 			self._price = price
 		else:
 			print("Invalid price")
@@ -134,16 +134,16 @@ class BreadProduct(Product):
 		        f"unit: {self._unit}, code: {self._code},"
 		        f"kosher: {self._kosher}, gluten: {self._gluten})")
 
-product1 = MilkProduct("Milk 3%", 8, "bottle", 123, True, "cow")
-product2 = MilkProduct("Goat Yogurt", 12, "cup", 34245, True, "goat")
-product3 = MilkProduct("Cheese", 25, "pack", 4654, True, "cow")
-product4 = MeatProduct("Chicken Breast", 35, "kg", 234, True, "chicken")
-product5 = MeatProduct("Beef Steak", 70, "kg", 4234, True, "beef")
-product6 = MeatProduct("Turkey Mince", 42, "kg", 345, True, "turkey")
-product7 = BreadProduct("White Bread", 10, "loaf", 867, True, True)
-product8 = BreadProduct("Gluten Free Bread", 18, "loaf", 453, True, False)
-product9 = BreadProduct("Baguette", 9, "pcs", 34, True, True)
-product10 = BreadProduct("Rye Bread", 11, "loaf", 45346, True, True)
+product1 = MilkProduct("Milk 3%", 8., "bottle", 123, True, "cow")
+product2 = MilkProduct("Goat Yogurt", 12., "cup", 34245, True, "goat")
+product3 = MilkProduct("Cheese", 25., "pack", 4654, True, "cow")
+product4 = MeatProduct("Chicken Breast", 35., "kg", 234, True, "chicken")
+product5 = MeatProduct("Beef Steak", 70., "kg", 4234, True, "beef")
+product6 = MeatProduct("Turkey Mince", 42., "kg", 345, True, "turkey")
+product7 = BreadProduct("White Bread", 10., "loaf", 867, True, 'True')
+product8 = BreadProduct("Gluten Free Bread", 18., "loaf", 453, True, 'False')
+product9 = BreadProduct("Baguette", 9., "pcs", 34, True, 'True')
+product10 = BreadProduct("Rye Bread", 11., "loaf", 45346, True, 'True')
 
 mini_market = [
     product1,
@@ -158,5 +158,16 @@ mini_market = [
     product10
 ]
 
-for product in mini_market:
-	print(product)
+def find_prod_by_price_range(products:list, price_from: float|int, price_to: float|int) -> list:
+	if not isinstance(products, list):
+		return []
+	if not isinstance(price_from,(int, float)) or not isinstance(price_to,(int, float)):
+		return []
+	if price_from < 0 or price_from > price_to:
+		return []
+	return [
+		p for p in products
+		if isinstance(p, Product) and price_from<=p.get_price()<=price_to
+	]
+
+print('1',find_prod_by_price_range(mini_market, 1, 10))

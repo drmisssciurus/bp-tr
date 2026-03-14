@@ -112,24 +112,24 @@ library = [
     EducationBook("History of Europe", "Anna White", 600, "history")
 ]
 
-for b in library:
-	print(b)
-
-print(library)
+# for b in library:
+# 	print(b)
+#
+# print(library)
 
 # def validate_non_empty_str(value, field_name):
 # 	if not isinstance(value, str):
 # 		print(f"{field_name} must be a non-empty string")
 # 	elif not value.strip():
 # 		print(f"{field_name} must be a non-empty string")
-def find_books_by_authors(books, author):
-	if isinstance(author, str) and isinstance(books, list):
-		return [book for book in books if book.get_author().lower() == author.lower()]
-	else: return []
+# def find_books_by_authors(books, author):
+# 	if isinstance(author, str) and isinstance(books, list):
+# 		return [book for book in books if book.get_author().lower() == author.lower()]
+# 	else: return []
 
-books1=find_books_by_authors(library, "J.K. Rowling")
-for b in books1:
-	print('hehe', b)
+# books1=find_books_by_authors(library, "J.K. Rowling")
+# for b in books1:
+# 	print('hehe', b)
 
 
 # def find_books_by_title_part(books, title_part):
@@ -150,4 +150,5 @@ def find_books_by_title_part(books, title_part):
 	title_part = title_part.lower()
 	return [book for book in books if title_part in book.get_title().lower()]
 
-print(find_books_by_title_part(library, 'potter'))
+# print(find_books_by_title_part(library, 'potter'))
+
